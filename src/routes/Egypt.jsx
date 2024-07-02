@@ -1,0 +1,16 @@
+import React from 'react'
+import Navbar from '../components/Navbar'
+import Subscribe from '../components/Subscribe'
+import Footer from '../components/Footer'
+
+const Egypt = () => {
+  return (
+    <div className="bg-[var(--primary-beige)] mt-[70px] w-full h-screen top-[70px">
+        <Navbar />
+        <Subscribe />
+        <Footer />
+    </div>
+  )
+}
+
+export default Egypt
