@@ -5,30 +5,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap');
 
 :root {
-    --primary-gold: #D4AF37;
-    --primary-blue: #2B6DA8;
-    --primary-yellow: #EADAA2;
-    --primary-red: #9B3D3D;
-    --primary-teal: #005B5C;
-    --primary-grey: #333333;
-    --primary-beige: #F4E1C1;
-    --transparent-gold: rgba(212, 175, 55, 0.9);
+  --primary-gold: #d4af37;
+  --primary-blue: #2b6da8;
+  --primary-yellow: #eadaa2;
+  --primary-red: #9b3d3d;
+  --primary-teal: #005b5c;
+  --primary-grey: #333333;
+  --primary-beige: #f4e1c1;
+  --transparent-gold: rgba(212, 175, 55, 0.9);
 }
 
 @layer base {
-    * {
-        @apply font-[Cairo]
-    }
+  * {
+    @apply font-[Cairo];
+  }
 
-    h1 {
-        @apply text-4xl font-bold
-    }
+  h1 {
+    @apply text-4xl font-bold;
+  }
 
-    li {
-        @apply p-4
-    }
+  li {
+    @apply p-4;
+  }
 
-    button {
-        @apply rounded-3xl
-    }
+  button {
+    @apply rounded-3xl bg-gradient-to-r from-[var(--primary-teal)] to-[var(--primary-blue)] text-[var(--primary-yellow)] font-bold hover:scale-110 ease-in-out duration-300;
+  }
+}
+
+.border-teal-custom {
+  border-bottom-width: 4px;
+  border-bottom-color: var(--primary-teal);
 }
