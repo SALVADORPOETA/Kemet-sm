@@ -75,11 +75,11 @@ const Navbar = () => {
             <li>
               <Link
                 className={`hover:border-b-4 hover:border-[var(--primary-teal)] font-bold text-lg ${
-                  isActive('/egypt')
+                  isActive('/history')
                     ? 'border-b-4 border-[var(--primary-teal)]'
                     : ''
                 }`}
-                to="/egypt"
+                to="/history"
               >
                 History
               </Link>
@@ -87,11 +87,11 @@ const Navbar = () => {
             <li>
               <Link
                 className={`hover:border-b-4 hover:border-[var(--primary-teal)] font-bold text-lg ${
-                  isActive('/products')
+                  isActive('/gods')
                     ? 'border-b-4 border-[var(--primary-teal)]'
                     : ''
                 }`}
-                to="/products"
+                to="/gods"
               >
                 Gods
               </Link>
@@ -145,11 +145,11 @@ const Navbar = () => {
             <li>
               <Link
                 className={`hover:border-b-4 hover:border-[var(--primary-teal)] font-bold text-xl ${
-                  isActive('/egypt')
+                  isActive('/history')
                     ? 'border-b-4 border-[var(--primary-teal)] inline-block p-1 text-2xl'
                     : 'inline-block p-1 text-2xl'
                 }`}
-                to="/egypt"
+                to="/history"
               >
                 History
               </Link>
@@ -157,11 +157,11 @@ const Navbar = () => {
             <li>
               <Link
                 className={`hover:border-b-4 hover:border-[var(--primary-teal)] font-bold text-xl ${
-                  isActive('/products')
+                  isActive('/gods')
                     ? 'border-b-4 border-[var(--primary-teal)] inline-block p-1 text-2xl'
                     : 'inline-block p-1 text-2xl'
                 }`}
-                to="/products"
+                to="/gods"
               >
                 Gods
               </Link>
