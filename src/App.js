@@ -1,6 +1,6 @@
 import Footer from './components/Footer'
-import Egypt from './components/Egypt'
-import Hero from './components/Hero'
+import HomeContainer from './routes/home/HomeContainer'
+import Hero from './routes/home/Hero'
 import Navbar from './components/Navbar'
 import Subscribe from './components/Subscribe'
 
@@ -9,7 +9,7 @@ function App() {
     <div className="bg-[var(--primary-beige)] h-full">
       <Navbar />
       <Hero />
-      <Egypt />
+      <HomeContainer />
       <Subscribe />
       <Footer />
     </div>
