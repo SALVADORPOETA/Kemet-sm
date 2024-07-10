@@ -1,7 +1,23 @@
 import React from 'react'
 import ImageSlider from './ImageSlider'
+import { Link, useNavigate } from 'react-router-dom'
+import { UserAuth } from '../../context/AuthContext'
 
 const Hero = () => {
+  const { user, logOut } = UserAuth()
+
+  const navigate = useNavigate()
+
+  const handleSignOut = async () => {
+    try {
+      await logOut()
+      navigate('/')
+      console.log('You are logged out')
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   return (
     <div className="w-full h-screen flex justify-center items-center relative">
       <ImageSlider />
@@ -17,7 +33,15 @@ const Hero = () => {
           For The Children of Ra
         </p>
         <div>
-          <button className="py-3 px-7 mt-4">Sign In</button>
+          {user ? (
+            <button onClick={handleSignOut} className="py-3 px-7 mt-4">
+              Log Out
+            </button>
+          ) : (
+            <Link to="/signin">
+              <button className="py-3 px-7 mt-4">Sign In</button>
+            </Link>
+          )}
         </div>
       </div>
     </div>

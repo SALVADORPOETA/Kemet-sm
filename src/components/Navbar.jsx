@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { UserAuth } from '../context/AuthContext'
 
 const Navbar = () => {
   const [nav, setNav] = useState(false)
+  const [shadow, setShadow] = useState(false)
+  const location = useLocation()
+
   const handleNav = () => {
     setNav(!nav)
   }
@@ -11,8 +15,6 @@ const Navbar = () => {
   const handleNavClick = () => {
     setNav(false)
   }
-
-  const [shadow, setShadow] = useState(false)
 
   useEffect(() => {
     const handleResize = () => {
@@ -39,11 +41,29 @@ const Navbar = () => {
     window.addEventListener('scroll', handleShadow)
   }, [])
 
+  const { user, logOut } = UserAuth()
+
+  const navigate = useNavigate()
+
+  const handleSignOut = async () => {
+    try {
+      await logOut()
+      navigate('/')
+      console.log('You are logged out')
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   const handleClick = () => {
+    handleSignOut()
     handleNavClick()
   }
 
-  const location = useLocation()
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [location])
+
   const isActive = (path) => location.pathname === path
 
   return (
@@ -62,6 +82,20 @@ const Navbar = () => {
         </h1>
         <div className="hidden md:flex h-full">
           <ul className="flex items-center text-[var(--primary-blue)]">
+            {user ? (
+              <li>
+                <Link
+                  className={`hover:border-b-4 hover:border-[var(--primary-teal)] font-bold text-lg ${
+                    isActive('/account')
+                      ? 'border-b-4 border-[var(--primary-teal)]'
+                      : ''
+                  }`}
+                  to="/account"
+                >
+                  Account
+                </Link>
+              </li>
+            ) : null}
             <li>
               <Link
                 className={`hover:border-b-4 hover:border-[var(--primary-teal)] font-bold text-lg ${
@@ -108,11 +142,15 @@ const Navbar = () => {
                 Contact
               </Link>
             </li>
-            <Link>
+            {user ? (
               <button onClick={handleClick} className="ml-4 py-3 px-7">
-                Sign In
+                Log Out
               </button>
-            </Link>
+            ) : (
+              <Link to="/signin">
+                <button className="ml-4 py-3 px-7">Sign In</button>
+              </Link>
+            )}
           </ul>
         </div>
         <div onClick={handleNav} className="block md:hidden">
@@ -130,6 +168,20 @@ const Navbar = () => {
           }
         >
           <ul className="flex flex-col text-[var(--primary-blue)] items-center mt-[50px]">
+            {user ? (
+              <li>
+                <Link
+                  className={`hover:border-b-4 hover:border-[var(--primary-teal)] font-bold text-xl ${
+                    isActive('/account')
+                      ? 'border-b-4 border-[var(--primary-teal)] inline-block p-1 text-2xl'
+                      : 'inline-block p-1 text-2xl'
+                  }`}
+                  to="/account"
+                >
+                  Account
+                </Link>
+              </li>
+            ) : null}
             <li>
               <Link
                 className={`hover:border-b-4 hover:border-[var(--primary-teal)] font-bold text-xl ${
@@ -178,10 +230,16 @@ const Navbar = () => {
                 Contact
               </Link>
             </li>
-            <Link>
-              <button onClick={handleClick} className="m-8 py-3 px-7">
-                Sign In
-              </button>
+            <Link to="/signin">
+              {user ? (
+                <button onClick={handleClick} className="m-8 py-3 px-7">
+                  Log Out
+                </button>
+              ) : (
+                <button onClick={handleClick} className="m-8 py-3 px-7">
+                  Sign In
+                </button>
+              )}
             </Link>
           </ul>
         </div>
