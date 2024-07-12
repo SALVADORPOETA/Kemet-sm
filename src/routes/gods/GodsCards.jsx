@@ -1,10 +1,23 @@
-import React, { useState } from 'react'
-import { dataGods } from '../../data/dataGods'
+import React, { useEffect, useState } from 'react'
 import GodsModal from './GodsModal'
+import axios from 'axios'
 
 const GodsCards = () => {
-  const [gods, setGods] = useState(dataGods)
-  const [allGods] = useState(dataGods)
+  const [gods, setGods] = useState([])
+  const [allGods, setAllGods] = useState([])
+
+  useEffect(() => {
+    const apiURL = 'https://kemet-api-sm.vercel.app/gods'
+    axios
+      .get(apiURL)
+      .then((response) => {
+        setGods(response.data)
+        setAllGods(response.data)
+      })
+      .catch((error) => {
+        console.error('Error fetching data from API: ', error)
+      })
+  }, [])
 
   const filterType = (form) => {
     setGods(
