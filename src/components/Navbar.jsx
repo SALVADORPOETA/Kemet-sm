@@ -177,6 +177,7 @@ const Navbar = () => {
                       : 'inline-block p-1 text-2xl'
                   }`}
                   to="/account"
+                  onClick={handleNavClick}
                 >
                   Account
                 </Link>
@@ -190,6 +191,7 @@ const Navbar = () => {
                     : 'inline-block p-1 text-2xl'
                 }`}
                 to="/"
+                onClick={handleNavClick}
               >
                 Home
               </Link>
@@ -202,6 +204,7 @@ const Navbar = () => {
                     : 'inline-block p-1 text-2xl'
                 }`}
                 to="/history"
+                onClick={handleNavClick}
               >
                 History
               </Link>
@@ -214,6 +217,7 @@ const Navbar = () => {
                     : 'inline-block p-1 text-2xl'
                 }`}
                 to="/gods"
+                onClick={handleNavClick}
               >
                 Gods
               </Link>
@@ -226,6 +230,7 @@ const Navbar = () => {
                     : 'inline-block p-1 text-2xl'
                 }`}
                 to="/contact"
+                onClick={handleNavClick}
               >
                 Contact
               </Link>
@@ -236,7 +241,7 @@ const Navbar = () => {
                   Log Out
                 </button>
               ) : (
-                <button onClick={handleClick} className="m-8 py-3 px-7">
+                <button onClick={handleNavClick} className="m-8 py-3 px-7">
                   Sign In
                 </button>
               )}
