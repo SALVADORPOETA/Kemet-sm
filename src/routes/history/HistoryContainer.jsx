@@ -29,7 +29,7 @@ const HistoryContainer = () => {
                 description={item.description}
                 width1={item.width1}
                 width2={item.width2}
-                className="hidden lg:flex"
+                className="hidden md:flex"
               />
               <HistoryText section={item.section} p1={item.p1} p2={item.p2} />
               <HistoryImage
@@ -38,7 +38,7 @@ const HistoryContainer = () => {
                 description={item.description}
                 width1={item.width1}
                 width2={item.width2}
-                className="flex lg:hidden"
+                className="flex md:hidden"
               />
             </>
           )}

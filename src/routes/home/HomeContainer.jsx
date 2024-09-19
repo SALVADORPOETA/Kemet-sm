@@ -43,7 +43,7 @@ const HomeContainer = () => {
                   description={item.description}
                   height1={item.height1}
                   height2={item.height2}
-                  className="hidden lg:flex"
+                  className="hidden md:flex"
                 />
                 <HomeText
                   key={item.id}
@@ -58,7 +58,7 @@ const HomeContainer = () => {
                   description={item.description}
                   height1={item.height1}
                   height2={item.height2}
-                  className="flex lg:hidden"
+                  className="flex md:hidden"
                 />
               </>
             )}

@@ -68,7 +68,7 @@ const ImageSlider = () => {
       <div className="absolute top-1/2 transform -translate-y-1/2 right-5 text-2xl rounded-full p-2 group-hover:bg-black/40 text-white cursor-pointer">
         <BsChevronCompactRight onClick={nextSlide} size={30} />
       </div>
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 bg-black/80 rounded-lg">
         {slides.map((slide, slideIndex) => (
           <div
             className={`text-2xl cursor-pointer ${
