@@ -1,23 +1,50 @@
 import React, { useEffect, useState } from 'react'
 import GodsModal from './GodsModal'
-import axios from 'axios'
 
 const GodsCards = () => {
   const [gods, setGods] = useState([])
   const [allGods, setAllGods] = useState([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
 
   useEffect(() => {
-    const apiURL = 'https://kemet-api-sm.vercel.app/gods'
-    axios
-      .get(apiURL)
-      .then((response) => {
-        setGods(response.data)
-        setAllGods(response.data)
-      })
-      .catch((error) => {
-        console.error('Error fetching data from API: ', error)
-      })
+    const fetchData = async () => {
+      try {
+        const res = await fetch(
+          'https://apis-repository-sm.vercel.app/api/kemet/gods'
+        )
+        if (!res.ok) {
+          throw new Error('Error fetching data')
+        }
+        const data = await res.json()
+        const sorted = data.sort((a, b) => a.idNum - b.idNum)
+        setGods(sorted)
+        setAllGods(sorted)
+      } catch (err) {
+        setError(err.message)
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    fetchData()
   }, [])
+
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <div className="w-16 h-16 border-4 border-t-[var(--primary-blue)] border-gray-200 rounded-full animate-spin"></div>
+      </div>
+    )
+  }
+
+  if (error) {
+    return (
+      <div className="flex justify-center items-center h-screen text-red-500">
+        Error: {error}
+      </div>
+    )
+  }
 
   const filterType = (form) => {
     setGods(
@@ -70,7 +97,7 @@ const GodsCards = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 pt-4">
           {gods.map((item) => (
             <GodsModal
-              key={item.id}
+              key={item.idNum}
               image={item.image}
               name={item.name}
               description={item.description}

@@ -1,31 +1,14 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs'
+import { RxDotFilled } from 'react-icons/rx'
+
 import sphinx from '../../assets/Sphinx.jpg'
 import pharaoh from '../../assets/Pharaoh.jpg'
 import daily from '../../assets/Daily.jpg'
 import abusimbel from '../../assets/Abusimbel.jpg'
-import { RxDotFilled } from 'react-icons/rx'
 
 const ImageSlider = () => {
-  const slides = [
-    {
-      url: sphinx,
-      title: 'slide1',
-    },
-    {
-      url: pharaoh,
-      title: 'slide2',
-    },
-    {
-      url: abusimbel,
-      title: 'slide3',
-    },
-    {
-      url: daily,
-      title: 'slide4',
-    },
-  ]
-
+  const slides = [sphinx, pharaoh, abusimbel, daily]
   const [currentIndex, setCurrentIndex] = useState(0)
 
   const prevSlide = () => {
@@ -40,43 +23,61 @@ const ImageSlider = () => {
     setCurrentIndex(newIndex)
   }, [currentIndex, slides.length])
 
-  const goToSlide = (slideIndex) => {
-    setCurrentIndex(slideIndex)
-  }
-
   useEffect(() => {
-    const interval = setInterval(() => {
-      nextSlide()
-    }, 3000)
-
+    const interval = setInterval(() => nextSlide(), 3000)
     return () => clearInterval(interval)
   }, [nextSlide])
 
+  const goToSlide = (slideIndex) => setCurrentIndex(slideIndex)
+
   return (
-    <div className="w-full h-full relative group">
+    <div className="relative w-full h-full overflow-hidden group">
+      {/* Contenedor deslizante */}
       <div
-        className="w-full h-full bg-center bg-cover duration-500"
-        style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
+        className="flex transition-transform ease-in-out duration-700"
+        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
       >
-        {' '}
+        {slides.map((url, index) => (
+          <div
+            key={index}
+            className="min-w-full h-full flex-shrink-0 flex justify-center items-center bg-black"
+          >
+            {/* Contenedor con proporción máxima 38:18 */}
+            <div
+              className="relative w-full max-w-[1600px]"
+              style={{ aspectRatio: '38 / 18' }}
+            >
+              <img
+                src={url}
+                alt={`Slide ${index + 1}`}
+                className="absolute top-0 left-0 w-full h-full object-cover rounded-lg"
+                draggable="false"
+              />
+            </div>
+          </div>
+        ))}
       </div>
-      {/* left arrow */}
-      <div className="absolute top-1/2 transform -translate-y-1/2 left-5 text-2xl rounded-full p-2 group-hover:bg-black/40 text-white cursor-pointer">
+
+      {/* Flecha izquierda */}
+      <div className="absolute top-1/2 -translate-y-1/2 left-5 text-2xl rounded-full p-2 group-hover:bg-black/40 text-white cursor-pointer">
         <BsChevronCompactLeft onClick={prevSlide} size={30} />
       </div>
-      {/* rigth arrow */}
-      <div className="absolute top-1/2 transform -translate-y-1/2 right-5 text-2xl rounded-full p-2 group-hover:bg-black/40 text-white cursor-pointer">
+
+      {/* Flecha derecha */}
+      <div className="absolute top-1/2 -translate-y-1/2 right-5 text-2xl rounded-full p-2 group-hover:bg-black/40 text-white cursor-pointer">
         <BsChevronCompactRight onClick={nextSlide} size={30} />
       </div>
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 bg-black/80 rounded-lg">
-        {slides.map((slide, slideIndex) => (
+
+      {/* Dots */}
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2 bg-black/80 rounded-lg px-2 py-1">
+        {slides.map((_, slideIndex) => (
           <div
+            key={slideIndex}
             className={`text-2xl cursor-pointer ${
               currentIndex === slideIndex
                 ? 'text-[var(--primary-blue)]'
                 : 'text-[var(--primary-red)]'
             }`}
-            key={slideIndex}
             onClick={() => goToSlide(slideIndex)}
           >
             <RxDotFilled />
