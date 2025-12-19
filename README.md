@@ -107,10 +107,10 @@ The application features a **custom Egyptian-themed design** with:
 
 ```bash
 # Clone the repository
-git clone https://github.com/SALVADORPOETA/kemet.git
+git clone https://github.com/SALVADORPOETA/Kemet-sm.git
 
 # Navigate to project directory
-cd kemet
+cd Kemet-sm
 
 # Install dependencies
 npm install
