@@ -100,7 +100,7 @@ The application features a **custom Egyptian-themed design** with:
 ### Prerequisites
 
 - Node.js 18+
-- npm
+- Yarn
 - Firebase account (for authentication setup)
 
 ### Installation
@@ -113,7 +113,7 @@ git clone https://github.com/SALVADORPOETA/Kemet-sm.git
 cd Kemet-sm
 
 # Install dependencies
-npm install
+yarn install
 ```
 
 ### Environment Variables
@@ -132,7 +132,7 @@ NEXT_PUBLIC_FIREBASE_APP_ID=your_app_id
 ### Development Server
 
 ```bash
-npm run dev
+yarn dev
 ```
 
 The application will be available at:
@@ -144,8 +144,8 @@ http://localhost:3000
 ### Build for Production
 
 ```bash
-npm run build
-npm start
+yarn build
+yarn start
 ```
 
 ---
