@@ -184,7 +184,7 @@ This project is **100% original**.
 
 ---
 
-## 👤 Author
+## 👨🏽‍💻 Author
 
 **Salvador Martínez**  
 *Full-Stack Developer*
