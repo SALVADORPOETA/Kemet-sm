@@ -100,7 +100,7 @@ The application features a **custom Egyptian-themed design** with:
 ### Prerequisites
 
 - Node.js 18+
-- npm or yarn
+- npm
 - Firebase account (for authentication setup)
 
 ### Installation
