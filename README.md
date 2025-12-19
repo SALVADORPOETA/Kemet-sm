@@ -192,8 +192,6 @@ This project is **100% original**.
 - **GitHub:** [https://github.com/SALVADORPOETA](https://github.com/SALVADORPOETA)
 - **LinkedIn:** [https://www.linkedin.com/in/salvador-martinez-sm/](https://www.linkedin.com/in/salvador-martinez-sm/)
 
-Made by **Salvador Martínez**.
-
 ---
 
 ## 📜 License
