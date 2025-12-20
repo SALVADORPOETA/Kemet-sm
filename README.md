@@ -209,5 +209,7 @@ All rights reserved to the author.
 - The project demonstrates advanced React patterns, Firebase integration, and custom API development
 
 ---
-🙏 Acknowledgments
+
+## 🙏 Acknowledgments
+
 Inspired by the enduring legacy and fascinating history of the ancient Egypt.
