@@ -194,11 +194,11 @@ This project is **100% original**.
 
 ---
 
-## 📜 License
+## ⚖️ License
 
-This is a portfolio project.
+This is a portfolio project by **Salvador Martinez**.
 
-No commercial use is permitted without prior authorization.  
+No commercial use intended.  
 All rights reserved to the author.
 
 ---
