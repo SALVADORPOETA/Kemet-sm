@@ -8,7 +8,7 @@ The application features user authentication with **Firebase**, allowing users t
 
 ---
 
-## 📝 Overview
+## ✨ Overview
 
 This project was **designed and built from scratch** as a portfolio-grade application to demonstrate:
 
