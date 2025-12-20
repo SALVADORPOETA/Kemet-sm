@@ -207,3 +207,7 @@ All rights reserved to the author.
 
 - Designed for **educational, cultural, and portfolio purposes**
 - The project demonstrates advanced React patterns, Firebase integration, and custom API development
+
+---
+🙏 Acknowledgments
+Inspired by the enduring legacy and fascinating history of the ancient Egypt.
