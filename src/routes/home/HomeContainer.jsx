@@ -62,8 +62,8 @@ const HomeContainer = () => {
                 image={item.image}
                 title={item.title}
                 description={item.description}
-                height1={item.height1}
-                height2={item.height2}
+                width1={item.width1}
+                width2={item.width2}
               />
               {item.idNum === 1 && (
                 <div className="hidden md:grid col-span-12 justify-center items-center mt-4">
@@ -77,8 +77,8 @@ const HomeContainer = () => {
                 image={item.image}
                 title={item.title}
                 description={item.description}
-                height1={item.height1}
-                height2={item.height2}
+                width1={item.width1}
+                width2={item.width2}
                 className="hidden md:flex"
               />
               <HomeText
@@ -91,8 +91,8 @@ const HomeContainer = () => {
                 image={item.image}
                 title={item.title}
                 description={item.description}
-                height1={item.height1}
-                height2={item.height2}
+                width1={item.width1}
+                width2={item.width2}
                 className="flex md:hidden"
               />
             </>
