@@ -21,6 +21,14 @@ This project was **designed and built from scratch** as a portfolio-grade applic
 
 **Kemet** is not a template, clone, or tutorial project. It represents a complete, production-ready web application showcasing advanced frontend and backend integration skills.
 
+<img width="763" height="631" alt="kemet-home" src="https://github.com/user-attachments/assets/5b72419f-edb7-43af-8b11-b81d130d3547" />
+
+<img width="763" height="631" alt="kemet-history" src="https://github.com/user-attachments/assets/da615d0b-bf99-44b4-9744-60a6ba58fc5f" />
+
+<img width="761" height="631" alt="kemet-gods" src="https://github.com/user-attachments/assets/22957d66-ef02-4ef2-b5e6-999e45c869df" />
+
+<img width="761" height="627" alt="kemet-gods-1" src="https://github.com/user-attachments/assets/4c6680fc-0c9b-4eab-8757-f6ad66dac106" />
+
 ---
 
 ## 🚀 Features
