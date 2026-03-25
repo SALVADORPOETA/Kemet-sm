@@ -21,11 +21,31 @@ This project was **designed and built from scratch** as a portfolio-grade applic
 
 **Kemet** is not a template, clone, or tutorial project. It represents a complete, production-ready web application showcasing advanced frontend and backend integration skills.
 
+---
+
+## Pages
+
+### Home Page
+
+This page establishes the geographical and sociopolitical context of the "Black Land" through a dynamic grid layout that prioritizes visual storytelling. It utilizes an asynchronous data fetching architecture and conditional rendering logic to present critical themes such as the barter economy, legal gender equality, and the linguistic evolution from Hieroglyphics to Coptic. Technically, it stands out for its responsive zig-zag design, which ensures a logical and fluid reading hierarchy, adapting the component order so that the mobile experience remains intuitive and content-rich.
+
 <img width="763" height="631" alt="kemet-home" src="https://github.com/user-attachments/assets/5b72419f-edb7-43af-8b11-b81d130d3547" />
+
+### History Page
+
+The History section offers an immersive journey through over 3,500 years of civilization, structured into 10 chronological blocks ranging from the Early Dynastic Period to the Roman Province era. The engine behind this page is a strict sorting algorithm that guarantees the integrity of the timeline, supported by historiographical curation that explains how "Golden Ages" and "Intermediate Periods" were defined. The use of era-specific archaeological assets provides a visual anchor that transforms complex data into a tangible and ordered educational experience.
 
 <img width="763" height="631" alt="kemet-history" src="https://github.com/user-attachments/assets/da615d0b-bf99-44b4-9744-60a6ba58fc5f" />
 
+### Gods Page
+
+Designed as an interactive mythological gallery, this page manages the complex Egyptian pantheon through a high-performance filtering engine and a dual-state React architecture. Users can explore deities based on their domain and form (Male, Female, or Both), allowing for instantaneous UI updates without redundant API calls. The multi-column grid layout ensures that the intricate iconography of gods like Ra, Isis, and Anubis is presented with total clarity, maintaining visual harmony through the use of global design tokens.
+
 <img width="761" height="631" alt="kemet-gods" src="https://github.com/user-attachments/assets/22957d66-ef02-4ef2-b5e6-999e45c869df" />
+
+### Gods Modal
+
+The Gods Modal is the project's most advanced interaction component, designed to provide depth without fragmenting navigation. It implements React Portals to decouple rendering from the main DOM hierarchy, eliminating z-index conflicts and ensuring a flawless overlay. The user experience is elevated by an outside-click detection system managed with useRef and useEffect, allowing for a natural user flow. Visually, it balances high-resolution iconography with detailed theological descriptions, all wrapped in a golden palette that reinforces the sacred theme of Kemet.
 
 <img width="761" height="627" alt="kemet-gods-1" src="https://github.com/user-attachments/assets/4c6680fc-0c9b-4eab-8757-f6ad66dac106" />
 
