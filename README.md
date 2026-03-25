@@ -23,7 +23,7 @@ This project was **designed and built from scratch** as a portfolio-grade applic
 
 ---
 
-## Pages
+## 📖 Pages
 
 ### Home Page
 
